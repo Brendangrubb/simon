@@ -12,12 +12,11 @@ function checkGuess() {
       return false;
     }
     for (var i = 0; i <= sequence.length; i++) {
-        if (sequence[i] !== sequence[i]) {
+        if (sequence[i] !== guesses[i]) {
             return false;
-        } else {
-            return true;
         }
     }
+    return true;
 };
 
 
@@ -25,12 +24,14 @@ function checkGuess() {
 $(document).ready(function() {
     $("#turn").click(function(event) {
         event.preventDefault();
+        $('.output').empty();
         var firstturn = sequenceBuild();
         $('.output').append("<p>" + firstturn + "</p>");
     });
 
     $("#start").click(function(event) {
         event.preventDefault();
+        $('.output').empty();
         sequence = [];
         guesses = [];
         $('.output').append("<p>" + "click new turn to play " + "</p>");
@@ -55,15 +56,13 @@ $(document).ready(function() {
 
     $("#play").click(function(event) {
         event.preventDefault();
+        $('.output').empty();
         if (checkGuess() === true){
             $('.output').append("<p>" + "You are right, click new turn to keep playing "+ "</p>");
         }else{
               $('.output').append("<p>" + "You are wrong, click new game to play again "+ "</p>");
         }
         guesses = [];
-      console.log("guesses" + guesses);
-      console.log("sequence"  + sequence);
 
     });
-
 });

@@ -5,6 +5,12 @@
   padding: 5px;
   width: 65px;
   border-radius: 10px;
+  cursor: pointer;
+  color: #0088cc;
+}
+
+#yellow:hover {
+  text-decoration: underline;
 }
 
 #green {
@@ -13,7 +19,12 @@
   padding: 5px;
   width: 65px;
   border-radius: 10px;
+  cursor: pointer;
+  color: #0088cc;
+}
 
+#green:hover {
+  text-decoration: underline;
 }
 
 #blue {
@@ -22,7 +33,12 @@
   padding: 5px;
   width: 65px;
   border-radius: 10px;
+  cursor: pointer;
+  color: #0088cc;
+}
 
+#blue:hover {
+  text-decoration: underline;
 }
 
 #red {
@@ -31,5 +47,10 @@
   padding: 5px;
   width: 65px;
   border-radius: 10px;
+  cursor: pointer;
+  color: #0088cc;
+}
 
+#red:hover {
+  text-decoration: underline;
 }
