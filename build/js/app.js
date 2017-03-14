@@ -37,8 +37,27 @@ $(document).ready(function() {
     $("#turn").click(function(event) {
         event.preventDefault();
         $('.output').empty();
-        var firstturn = newSimon.sequenceBuild();
-        $('.output').append("<p>" + firstturn + "</p>");
+        var turn = newSimon.sequenceBuild();
+        var fullArray = newSimon.sequence;
+
+        fullArray.forEach(function(color) {
+          if (color === 1) {
+            $('#yellow').css("background-color", "yellow");
+            setTimeout(function(){ $('#yellow').css("background-color", "white");}, 500);
+          } else if (color === 2) {
+            setTimeout(function(){$('#green').css("background-color", "green");}, 500);
+            setTimeout(function(){$('#green').css("background-color", "white");}, 1000);
+          } else if (color === 3) {
+            setTimeout(function(){$('#blue').css("background-color", "blue");}, 1000);
+            setTimeout(function(){$('#blue').css("background-color", "white");}, 1500);
+          } else {
+            setTimeout(function(){$('#red').css("background-color", "red");}, 2000);
+            setTimeout(function(){$('#red').css("background-color", "white");}, 2500);
+          }
+
+        });
+
+        $('.output').append("<p>" + turn + "</p>");
     });
 
     $("#start").click(function(event) {
